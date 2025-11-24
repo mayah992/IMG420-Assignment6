@@ -2,11 +2,13 @@
 Retrieve the Sun is a simple top-down combat game where the player has to defeat all the dark enemies in order to retrieve the stolen sun. The game includes a simple combat system with simple Enemy AI behavior implemented using a Behavior Tree.
 
 Movement:
+
 WASD to move
 SHIFT to sprint
 SPACE to attack
 
 Sound Assets:
+
 Sound Effect by <a href="https://pixabay.com/users/data_pion-49620193/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=324521">Diego Nasc</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=324521">Pixabay</a>
 
 Sound Effect by <a href="https://pixabay.com/users/kodasworldproductions-27998106/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=163912">Nykoda Caston</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=163912">Pixabay</a>
