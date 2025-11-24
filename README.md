@@ -24,6 +24,10 @@ Enemies and Allies have varying power levels. The enemies are stronger, but more
 
 ![Screenshot of Fleeing Enemy with spawned Ally Support](https://i.imgur.com/Tp2uqkX.png)
 
+# Visual Assets:
+
+All sprites are created by me.
+
 # Sound Assets:
 
 Sound Effect by <a href="https://pixabay.com/users/data_pion-49620193/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=324521">Diego Nasc</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=324521">Pixabay</a>
