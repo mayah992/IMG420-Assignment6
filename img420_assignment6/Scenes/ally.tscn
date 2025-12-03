@@ -1,0 +1,132 @@
+[gd_scene load_steps=18 format=3 uid="uid://c2oix8ia82vmk"]
+
+[ext_resource type="Script" uid="uid://chl2qpwlapkay" path="res://Scripts/Ally.cs" id="1_pdqpk"]
+[ext_resource type="Texture2D" uid="uid://0wrourtcsi4h" path="res://Assets/Sprites/Enemy.png" id="1_pv2ki"]
+[ext_resource type="Script" uid="uid://db8nvttdy504t" path="res://Scripts/HealthBar.cs" id="3_vvjln"]
+[ext_resource type="AudioStream" uid="uid://dodcrsdpcms3k" path="res://Assets/Sounds/EnemyHit.mp3" id="4_1lpcp"]
+[ext_resource type="AudioStream" uid="uid://xn3uk54bu4fj" path="res://Assets/Sounds/EnemyKilled.mp3" id="5_8c2c4"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_1lpcp"]
+blend_mode = 1
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xfkt0"]
+atlas = ExtResource("1_pv2ki")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pdqpk"]
+atlas = ExtResource("1_pv2ki")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vvjln"]
+atlas = ExtResource("1_pv2ki")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1lpcp"]
+atlas = ExtResource("1_pv2ki")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8c2c4"]
+atlas = ExtResource("1_pv2ki")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u0am3"]
+atlas = ExtResource("1_pv2ki")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pm1th"]
+atlas = ExtResource("1_pv2ki")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hqxkx"]
+atlas = ExtResource("1_pv2ki")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7mt7b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xfkt0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pdqpk")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vvjln")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1lpcp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8c2c4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u0am3")
+}],
+"loop": true,
+"name": &"die",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pm1th")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hqxkx")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m1equ"]
+radius = 7.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pdqpk"]
+radius = 21.0238
+
+[node name="Ally" type="CharacterBody2D"]
+script = ExtResource("1_pdqpk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("CanvasItemMaterial_1lpcp")
+sprite_frames = SubResource("SpriteFrames_7mt7b")
+animation = &"die"
+frame_progress = 0.544326
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_m1equ")
+
+[node name="HealthBar" type="Node2D" parent="."]
+script = ExtResource("3_vvjln")
+
+[node name="ProgressBar" type="ProgressBar" parent="HealthBar"]
+offset_left = -22.0
+offset_top = 9.0
+offset_right = 24.0
+offset_bottom = 27.0
+theme_override_font_sizes/font_size = 10
+
+[node name="AttackArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+shape = SubResource("CircleShape2D_pdqpk")
+
+[node name="DamageTaken" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_1lpcp")
+
+[node name="Killed" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_8c2c4")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -30.0
+offset_right = 20.0
+offset_bottom = -7.0
+theme_override_font_sizes/font_size = 13
+text = "Ally"
+horizontal_alignment = 1

@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://cubd8t816qk60"]
+
+[ext_resource type="AudioStream" uid="uid://qgjw1adg174y" path="res://Assets/Sounds/GameWin.mp3" id="1_4coss"]
+[ext_resource type="Script" uid="uid://bon341c7iju68" path="res://Scripts/GameOver.cs" id="1_er4tp"]
+
+[node name="GameWin" type="Node2D"]
+script = ExtResource("1_er4tp")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 23.0
+offset_top = 19.0
+offset_right = 304.0
+offset_bottom = 116.0
+theme_override_colors/default_color = Color(0.516548, 0.28653, 9.62615e-08, 1)
+bbcode_enabled = true
+text = "[center]You defeated all the dark creatures and retrieved the stolen sun
+
+[rainbow freq=0.3 sat=0.8 val=0.8 speed=1.0] CONGRATS [/rainbow]"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+offset_right = 333.0
+offset_bottom = 183.0
+color = Color(1, 0.858824, 0.317647, 1)
+
+[node name="Return" type="Button" parent="."]
+offset_left = 77.0
+offset_top = 126.0
+offset_right = 250.0
+offset_bottom = 157.0
+text = "Return to Main Menu"
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_4coss")

@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmob0l4flymbb"]
+
+[ext_resource type="Script" uid="uid://bon341c7iju68" path="res://Scripts/GameOver.cs" id="1_ojehl"]
+[ext_resource type="AudioStream" uid="uid://bujxcpsf34cuo" path="res://Assets/Sounds/GameOver.mp3" id="2_8fo1c"]
+
+[node name="GameOver" type="Node2D"]
+script = ExtResource("1_ojehl")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 6.0
+offset_top = 18.0
+offset_right = 316.0
+offset_bottom = 143.0
+theme_override_font_sizes/normal_font_size = 13
+bbcode_enabled = true
+text = "[shake rate=5.0 level=1][center]You were killed by the dark creatures
+and were unable to retrieve 
+the stolen sun.
+
+The world will forever be in darkness..."
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+offset_left = -27.0
+offset_top = -15.0
+offset_right = 353.0
+offset_bottom = 196.0
+color = Color(0.0823529, 0.12549, 0.305882, 1)
+
+[node name="Return" type="Button" parent="."]
+offset_left = 67.0
+offset_top = 136.0
+offset_right = 243.0
+offset_bottom = 167.0
+text = "Return To Main Menu"
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_8fo1c")

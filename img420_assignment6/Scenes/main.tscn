@@ -1,0 +1,71 @@
+[gd_scene load_steps=6 format=3 uid="uid://bk5ne2yrjtrsk"]
+
+[ext_resource type="PackedScene" uid="uid://briro8fgae2i7" path="res://Scenes/level_1.tscn" id="1_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://l7p1ll7wmo1k" path="res://Scenes/player.tscn" id="1_jjgbg"]
+[ext_resource type="Script" uid="uid://b0w7d8a3kigob" path="res://Scripts/Main.cs" id="1_jjvhh"]
+[ext_resource type="PackedScene" uid="uid://f0nud5r4ib1x" path="res://Scenes/enemy.tscn" id="3_8gbba"]
+[ext_resource type="AudioStream" uid="uid://3bkesjnww572" path="res://Assets/Sounds/Fight.mp3" id="5_kry3j"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_jjvhh")
+
+[node name="Level1" parent="." instance=ExtResource("1_bo1nx")]
+
+[node name="Player" parent="." instance=ExtResource("1_jjgbg")]
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Instructions" type="Label" parent="UI"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Game Info" type="Label" parent="UI"]
+anchors_preset = -1
+anchor_left = -0.059
+anchor_top = -0.872
+offset_left = 18.88
+offset_top = 156.96
+offset_right = 52.0
+offset_bottom = 35.0
+
+[node name="Enemy" parent="." instance=ExtResource("3_8gbba")]
+position = Vector2(-304, -112)
+PatrolPointsPath = NodePath("../PatrolA")
+
+[node name="Enemy2" parent="." instance=ExtResource("3_8gbba")]
+position = Vector2(240, 98)
+PatrolPointsPath = NodePath("../PatrolB")
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_kry3j")
+volume_db = -3.0
+
+[node name="PatrolA" type="Node2D" parent="."]
+
+[node name="Point1" type="Node2D" parent="PatrolA"]
+position = Vector2(-305, -110)
+
+[node name="Point2" type="Node2D" parent="PatrolA"]
+position = Vector2(-1, -177)
+
+[node name="Point3" type="Node2D" parent="PatrolA"]
+position = Vector2(270, -128)
+
+[node name="Point4" type="Node2D" parent="PatrolA"]
+position = Vector2(1, -144)
+
+[node name="PatrolB" type="Node2D" parent="."]
+
+[node name="Point1" type="Node2D" parent="PatrolB"]
+position = Vector2(241, 98)
+
+[node name="Point2" type="Node2D" parent="PatrolB"]
+position = Vector2(-1, 144)
+
+[node name="Point3" type="Node2D" parent="PatrolB"]
+position = Vector2(-273, 64)
+
+[node name="Point4" type="Node2D" parent="PatrolB"]
+position = Vector2(-1, 112)

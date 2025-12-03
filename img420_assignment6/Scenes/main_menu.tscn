@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://bx71kh7hv8od4"]
+
+[ext_resource type="Texture2D" uid="uid://chdhuiip5cvak" path="res://Assets/Sprites/RetrieveTheSunMainMenu.png" id="1_28flt"]
+[ext_resource type="Script" uid="uid://ceq6gidoaj08x" path="res://Scripts/MainMenu.cs" id="1_48xlc"]
+[ext_resource type="AudioStream" uid="uid://c7m2tcktdyjcd" path="res://Assets/Sounds/MainMenu.mp3" id="3_1ehe0"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_48xlc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(160, 90)
+texture = ExtResource("1_28flt")
+
+[node name="StartGameButton" type="Button" parent="."]
+offset_left = 124.0
+offset_top = 112.0
+offset_right = 196.0
+offset_bottom = 134.0
+theme_override_font_sizes/font_size = 10
+text = "Start Game"
+
+[node name="ExitGameButton" type="Button" parent="."]
+offset_left = 124.0
+offset_top = 139.0
+offset_right = 196.0
+offset_bottom = 161.0
+theme_override_font_sizes/font_size = 10
+text = "Exit Game"
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_1ehe0")
